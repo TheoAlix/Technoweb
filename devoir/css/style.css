@@ -1,0 +1,267 @@
+/*Petite règle css pour changer la couleur lorsque l'on selectionne du texte*/
+*::selection{background:rgba(198, 119, 255, 0.9);}
+
+/* La palette de couleurs du site est inspirée de l'extension/thème firefox "Dark Magic" qui rends le tout plus beau avec la complémentarité du noir/blanc et les accents violets*/
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.3;
+    margin: 0;
+    text-align: justify;
+    padding: 1% 10% 0% 10%;
+    box-sizing: border-box;
+    background-color: rgb(238, 238, 238);
+}
+
+/* Ici il y a tout ce qui concerne le header, à la fois le header normal et le menu dépliant via un logo à trois barres animé qui fait apparaitre un menu différent lors de l'utilisation du site sur un appareil mobile*/
+header{
+    position: sticky;
+    padding-block: .9em;
+    top: 0;
+    background-color: rgb(238, 238, 238);
+    margin: 0;
+    font-size: 1.2em;
+    z-index: 1;
+}
+
+#contenant-menu {
+    display: block;
+    cursor:pointer;
+  }
+  
+#barre_1, #barre_2, #barre_3 {
+    width: 33px;
+    height: 5px;
+    background-color: rgb(0, 0, 0);
+    margin: 6px 0;
+    transition: 400ms;
+}
+
+#contenant-menu:active #barre_1{transform: rotate(-45deg) translate(-9px, 6px) ;}
+#contenant-menu:active #barre_2{opacity: 0;}
+#contenant-menu:active #barre_3{transform: rotate(45deg) translate(-9px, -6px) ;}
+
+#header-nav{
+    inline-size: 100%;
+    margin-inline: 0;
+}
+
+#liste-nav{
+    list-style: None;
+    display: flex;
+    gap: 2em;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-elt,.nav-elt-actif{
+    color: rgb(0, 0, 0);
+    display: block;
+    padding-inline: 1em;
+    text-decoration: None;
+    line-height: 160%;
+}
+
+a{text-decoration: none; color:black;}
+
+.nav-elt:hover,a:hover{
+    text-decoration: underline #9400ff 2px;
+    transition: 100ms;
+}
+
+.nav-elt-actif{
+    background-color: rgb(0, 0, 0);
+    border-radius: 4em;
+    color: rgb(255, 255, 255);
+}
+
+.nav-elt-actif:hover{
+    background-color: #272727;
+    text-decoration: none;
+}
+
+/*Les règles pour les titres de pages*/
+#titre{
+    text-align: center;
+    margin-bottom: 1em;
+    margin: 1.5em;
+}
+#titre span{
+    border-bottom: #9400ff 2px solid;
+    font-size: 30px;
+}
+/*Les règles que j'ai utilise sur le main et les figures de toutes les pages*/
+main{
+    padding-top: .5em;
+}
+
+figure, figcaption{
+    text-align: center;
+    text-decoration: underline #9400ff ;
+    text-decoration-thickness: 0.1em;
+    font-size: smaller;
+}
+
+#napo1,#napo2,#napo3,#paume{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 25em;
+}
+/*Les règles du footer*/
+footer{
+    text-align: center;
+    margin: 3em 0 1em 0;
+    color: black;
+    display: grid; 
+    grid-template-columns: repeat(4,1fr); 
+    justify-content: center;
+    border-top: solid .05em black;
+}
+
+footer div{
+    padding: 0;
+    text-align: center;
+    line-height: .3em;
+}
+/* Plusieurs propriétées pour les différentes images,figures, frames et grids des pages*/
+img:hover{
+    opacity: .9;
+}
+
+figcaption{
+    opacity: 0;
+}
+
+figure:hover figcaption{
+    transition: 300ms;
+    opacity: 1;
+}
+
+#unicaen{height: 100%;}
+#logo-unicaen{width: 10em;vertical-align: middle;}
+
+#grid-helene{display: grid; grid-template-columns: repeat(2,1fr); justify-items: center;}
+
+#contenant-contact,#contenu-contact{display: grid; justify-content: center;}
+#img-contact{width: 9em; margin-left: auto; margin-right: auto;}
+
+#saint-helene{width: 21em;}
+
+#carte{width: 36em;}
+
+#main-cookies{display: grid; grid-template-columns: repeat(3,1fr);}
+#main-cookies section{width: 80%; display: grid; }
+#main-cookies section h2{text-align: center;}
+#main-cookies section img{width: 4em; margin-left: auto; margin-right: auto;}
+
+#main-sources{display: grid; grid-template-columns: repeat(2,1fr);}
+#main-sources img{width: 20em; margin-left: auto; margin-right: auto; padding-top: 3em;}
+
+
+#grid-constitutions,#grid-mort{display: grid; grid-template-columns: repeat(2,1fr);}
+#constitution_1 img{width: 30em;}
+#constitution_2 img{width: 20em;;}
+#couronnement img{width: 50em;}
+
+#mort_1 img{width: 30em;}
+#mort_2 img{width: 35em;}
+#sad-napo img{width: 25em;}
+
+#video-youtube iframe{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#caché{opacity: 0;}
+#caché:hover{opacity: 1;}
+
+#main-cgu div{
+    display: grid;
+}
+.grid-cgu{
+    display: grid;
+    grid-template-columns: 1fr 3fr
+}
+.grid-cgu img{width: 20em;}
+
+.arc{
+    font-size:15em;
+    margin: 0 auto 0 auto;
+}
+.arc:hover{animation: arc-en-ciel 2.5s linear; animation-iteration-count: infinite;}
+.arc::selection{background: silver;}
+
+.coalitions img{width: 40em;}
+
+
+/* Toutes mes medias quaries à la fin pour empêcher les conflits avec les propriétées précédentes*/
+
+@media screen and (max-width:700px){
+    body{
+        padding: .8em;
+        margin-bottom: 15em;
+    }
+    header{
+        position:relative;
+        padding-bottom: .5em;
+    }
+    header nav{
+        display: none;
+    }
+    #titre{
+        font-size: medium;
+        text-align: right;
+    }
+    #grid-constitutions,#main-sources,#grid-helene,.grid-cgu,#grid-mort{grid-template-columns: 1fr;}
+    footer{display: none;}
+    #video-youtube iframe{width: 20em;}
+    #couronnement img,#grid-helene img,#grid-constitutions img,#sad-napo img,.coalitions img{width: 20em;}
+    .arc{font-size: 10em;}
+}
+
+@media screen and (min-width:700px) {
+    #contenant-menu{
+        display:none;
+    }
+}
+
+/*Petite animation d'arc en ciel parceque c'est beau et que je peux me le permettre*/
+@keyframes arc-en-ciel{
+    100%,0%{
+        color: rgb(255,0,0);
+    }
+    8%{
+        color: rgb(255,127,0);
+    }
+    16%{
+        color: rgb(255,255,0);
+    }
+    25%{
+        color: rgb(127,255,0);
+    }
+    33%{
+        color: rgb(0,255,0);
+    }
+    41%{
+        color: rgb(0,255,127);
+    }
+    50%{
+        color: rgb(0,255,255);
+    }
+    58%{
+        color: rgb(0,127,255);
+    }
+    66%{
+        color: rgb(0,0,255);
+    }
+    75%{
+        color: rgb(127,0,255);
+    }
+    83%{
+        color: rgb(255,0,255);
+    }
+    91%{
+        color: rgb(255,0,127);
+    }
+}
